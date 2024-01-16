@@ -108,13 +108,10 @@ def calculate_demographic_data(print_data=True):
     occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K = None
     occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count = None
     for occupation_value, count_with_occupation_value in native_country_india_and_earn_more_than_50K_occupation_series_value_counts.items():
-        if occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K == None:
+        if ((occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K == None) or
+            (count_with_occupation_value > occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count)):
             occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K = occupation_value
-            occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count = count_with_occupation_value
-        if count_with_occupation_value > occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count:
-            occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K = occupation_value
-            occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count = count_with_occupation_value
-            
+            occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K_count = count_with_occupation_value            
         
     top_IN_occupation = occupation_with_most_occurrences_among_native_country_india_and_earn_more_than_50K
 
